@@ -14,6 +14,8 @@ NOTES:
 */
 
 #include <stdio.h>
+void copy(char a[], char b[]);
+
 
 struct student {
 	char name[10];
@@ -21,5 +23,46 @@ struct student {
 };
 
 void * scoresDescendingSort(struct student *students, int len) {
-	return NULL;
+
+	int i, j;
+
+
+
+	if (students == NULL || len <= 0)
+	{
+		return NULL;
+	}
+	else
+	{
+
+		for (i = 1; i < len; i++)
+		{
+			for (j = 0; j < len - i; j++)
+			{
+				if (students[j].score < students[j + 1].score)
+				{
+					int temp = students[j + 1].score;
+					students[j + 1].score = students[j].score;
+					students[j].score = temp;
+					char str[10];
+					copy(str, students[j + 1].name);
+					copy(students[j + 1].name, students[j].name);
+					copy(students[j].name, str);
+
+
+				}
+			}
+		}
+	}
+
+}
+
+void copy(char a[], char b[])
+{
+	int i;
+	for (i = 0; b[i]; i++)
+	{
+		a[i] = b[i];
+	}
+	a[i] = '\0';
 }

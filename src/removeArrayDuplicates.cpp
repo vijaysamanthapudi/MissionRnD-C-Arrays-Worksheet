@@ -14,9 +14,39 @@ NOTES: Don't create new array, try to change the input array.
 */
 
 #include <stdio.h>
-
+int  shift(int a[], int pos, int len);
 int removeArrayDuplicates(int *Arr, int len)
 {
-	
-	return -1;
+	int i, j;
+
+	if (Arr == NULL || len <= 0)
+	{
+		return -1;
+	}
+	else
+	{
+		for (i = 0; i < len - 1; i++)
+		{
+			for (j = i + 1; j < len; j++)
+			{
+				if (Arr[i] == Arr[j])
+				{
+					len = shift(Arr, j, len);
+				}
+			}
+		}
+	}
+	return len;
+}
+
+int  shift(int Arr[], int pos, int len)
+{
+	int i;
+	for (i = pos; i < len; i++)
+	{
+		Arr[i] = Arr[i + 1];
+
+	}
+	len--;
+	return len;
 }
