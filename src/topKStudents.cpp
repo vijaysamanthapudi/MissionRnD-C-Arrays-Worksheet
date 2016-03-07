@@ -26,15 +26,15 @@ struct student {
 
 struct student ** topKStudents(struct student *students, int len, int K)
 {
-	int m, i, j;
+	int  i, j;
 	if (students == NULL || len <= 0 || K <= 0)
 		return NULL;
 	if (K > len)
 		K = len;
 
 	struct student **arr = (struct student **)malloc(sizeof(struct student)*K);
-	for (m = 0; m < K; m++){
-		arr[m] = (struct student *)malloc(sizeof(struct student));
+	for (i = 0; i < K; i++){
+		arr[i] = (struct student *)malloc(sizeof(struct student));
 	}
 	if (students == NULL || len <= 0)
 		return NULL;
