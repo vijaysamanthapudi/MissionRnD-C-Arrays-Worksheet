@@ -58,13 +58,15 @@ struct student ** topKStudents(struct student *students, int len, int K)
 
 
 }
-void swap_int(int *num1, int *num2){
-	int temp = *num1;
-	*num1 = *num2;
-	*num2 = temp;
+void swap_int(int *n1, int *n2)
+{
+	int temp = *n1;
+	*n1 = *n2;
+	*n2 = temp;
 }
-void swap_char(char *s1, char *s2){
-	char *temp = s1;
-	s1 = s2;
-	s2 = temp;
+void swap_char(char *str1, char *str2)
+{
+		char *temp = str1;
+		str1 = str2;
+	str2 = temp;
 }
